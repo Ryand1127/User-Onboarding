@@ -1,6 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
+import User from './User.js';
+import Styled from 'styled-components';
+
+const StyledForm = Styled.div`
+
+text-align: center;
+
+    label{
+        margin-right: 4%;
+        font-size: 20px;
+        color: white;
+    }
+
+    input{
+        margin-top: 2%;
+        margin-left: 0.5%;
+        font-size: 20px;
+    }
+
+    form{
+        background-color: black;
+        padding-bottom: 2%;
+        border-bottom: 5px solid red;
+    }
+
+    button{
+        padding: 0.5%;
+        font-size: 25px;
+        color: yellow;
+        border: 1px solid yellow;
+    }
+`
 
 const initialUser = {
     first_name:"",
@@ -71,7 +103,7 @@ export default function Form(props){
     }, [userValue]);
 
 return(
-<div>
+<StyledForm>
     <div style={{color : 'red'}}>
         <div>{errors.first_name}</div>
         <div>{errors.email}</div>
@@ -121,7 +153,8 @@ return(
         </label>
      <button disabled={disabled}>Submit</button>
     </form>
-</div>
+    <User startUser={startUser}/>
+</StyledForm>
 )
 
 
