@@ -63,7 +63,7 @@ export default function Form(props){
         })
         
     }
-    console.log(startUser)
+
     useEffect(() => {
     
         schema.isValid(userValue).then(valid => setDisabled(!valid))
