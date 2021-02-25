@@ -60,7 +60,7 @@ export default function Form(props){
           .get(
             `https://reqres.in/api/users`
           )
-          .then((res) => {
+          .then((res) => { 
               setStartUser(res.data.data)
           })
           .catch((err) => {
@@ -88,7 +88,7 @@ export default function Form(props){
         const newUser = { first_name: userValue.first_name.trim(), email: userValue.email.trim(), password: userValue.password.trim(), tos: userValue.tos}
         axios.post(`https://reqres.in/api/users`, newUser)
         .then(res => {
-            
+
             setStartUser([...startUser, res.data])
             setUserValue({ first_name:'', email:'', password:'', tos:false})
             

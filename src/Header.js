@@ -6,10 +6,10 @@ const StyledHeader = Styled.header`
 background-color: black;
 text-align: center;
 
+
     img {
         width: 500px;
     }
-
 
 `
 
